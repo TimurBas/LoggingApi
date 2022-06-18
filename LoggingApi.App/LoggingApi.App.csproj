@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoggingApi.Data\LoggingApi.Data.csproj" />
+    <ProjectReference Include="..\LoggingApi.Domain\LoggingApi.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
