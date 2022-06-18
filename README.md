@@ -3,6 +3,7 @@
 
 ### Tech Stack
 Front-end: `React.js, TypeScript, Chakra-UI`
+
 Back-end: `C# Web API (.NET Core project)`
 
 ### How is it used
