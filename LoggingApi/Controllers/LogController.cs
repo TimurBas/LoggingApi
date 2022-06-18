@@ -26,7 +26,7 @@ namespace LoggingApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Log>> GetAllLogEvents()
+        public ActionResult<List<LogDto>> GetAllLogEvents()
         {
             var logsEvents = _service.GetAllLogEvents();
             return Ok(logsEvents);

@@ -7,6 +7,6 @@ namespace LoggingApi.App.Services
     public interface ILogService
     {
         void AddLogEvent(Event @event);
-        List<Log> GetAllLogEvents();
+        List<LogDto> GetAllLogEvents();
     }
 }

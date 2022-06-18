@@ -1,4 +1,4 @@
-﻿using LoggingApi.Domain.Entities;
+﻿using LoggingApi.Domain.Values;
 
 namespace LoggingApi.App.Models
 {
@@ -6,6 +6,6 @@ namespace LoggingApi.App.Models
     {
         public string LogLevel { get; set; }
         public string LogMessage { get; set; }
-        //public LogException LogException { get; set; }
+        public LogException LogException { get; set; }
     }
 }

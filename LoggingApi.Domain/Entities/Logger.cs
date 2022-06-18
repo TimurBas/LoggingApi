@@ -1,5 +1,6 @@
 ﻿using LoggingApi.Domain.Entities;
 using LoggingApi.Domain.Factories;
+using LoggingApi.Domain.Shared;
 using LoggingApi.Domain.Strategies;
 using System;
 using System.Collections.Generic;
@@ -36,13 +37,13 @@ namespace LoggingApi.Domain
                 return; 
             }
 
+            if (!HasBasePath || DataFormatStrategies.Count < 1)
+                return;
+
             if (IsSystemConsoleEnabled)
             {
                 WriteEventToStandardOutput(logEvent);
             }
-
-            if(!HasBasePath || DataFormatStrategies.Count < 1)
-                return;
 
             foreach (IDataFormatStrategy dataFormatStrategy in DataFormatStrategies)
             {

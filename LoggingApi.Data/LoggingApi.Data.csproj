@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.17" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LoggingApi.Domain\LoggingApi.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

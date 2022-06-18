@@ -8,8 +8,9 @@ namespace LoggingApi.Data.Contexts
         public LogContext(DbContextOptions<LogContext> options)
             : base(options)
         {
-            
+
         }
-        public DbSet<Log> Logs { get; set; }
+        public DbSet<LogDto> Logs { get; set; }
+        public DbSet<LogExceptionDto> Exceptions {get; set;}
     }
 }
