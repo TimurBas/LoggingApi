@@ -1,6 +1,6 @@
 using LoggingApi.App.Services;
 using LoggingApi.Data.Contexts;
-using LoggingApi.Domain;
+using LoggingApi.Domain.Entities;
 using LoggingApi.Domain.Factories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -1,18 +1,17 @@
-﻿using LoggingApi.Domain.Entities;
-using LoggingApi.Domain.Factories;
+﻿using LoggingApi.Domain.Factories;
 using LoggingApi.Domain.Shared;
 using LoggingApi.Domain.Strategies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LoggingApi.Domain
+namespace LoggingApi.Domain.Entities
 {
     public class Logger
     {
-        private string BasePath { get; init; }
-        private bool IsSystemConsoleEnabled { get; init; }
-        private IList<IDataFormatStrategy> DataFormatStrategies { get; init; }
+        public string BasePath { get; init; }
+        public bool IsSystemConsoleEnabled { get; init; }
+        public IList<IDataFormatStrategy> DataFormatStrategies { get; init; }
         private readonly bool HasBasePath = false;
         public Logger(ILogFactory logFactory)
         {
@@ -31,7 +30,9 @@ namespace LoggingApi.Domain
         {
             var logLevelNames = Enum.GetNames<LogLevel>().ToList();
             var logLevelInt = (int)logEvent.Level;
-            var isLogLevelOutOfBounds = logLevelInt > logLevelNames.Count || logLevelInt < (int)LogLevel.Information;
+            var logLevelInformationInt = (int)LogLevel.Information;
+
+            var isLogLevelOutOfBounds = logLevelInt > logLevelNames.Count || logLevelInt < logLevelInformationInt;
             if (isLogLevelOutOfBounds)
             {
                 return; 
@@ -40,7 +41,7 @@ namespace LoggingApi.Domain
             if (!HasBasePath || DataFormatStrategies.Count < 1)
                 return;
 
-            if (IsSystemConsoleEnabled)
+            if (IsSystemConsoleEnabled || logLevelInt >= logLevelInformationInt)
             {
                 WriteEventToStandardOutput(logEvent);
             }
